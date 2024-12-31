@@ -1,0 +1,4 @@
+1. For installing Redux use This cmd:
+    npm install redux --save
+2. For using redux on react we need to install react-redux package:
+    npm install react-redux --save
