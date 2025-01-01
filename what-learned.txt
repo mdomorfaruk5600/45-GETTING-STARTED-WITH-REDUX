@@ -1,39 +1,22 @@
-1. reducer function / method must have state default param / arg with initial 
-state. and the 2nd arg is action. and the reducer must export as default;
+1. we need to import {} createStore function / method from 'redux' for creating 
+redux store. we will create this store under store folder of redux folder. we 
+will give the reducer as arg of createStore function / method. and We will call
+the createStore method on a variable. 
     ===>
-        import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cartActions";
+        import {createStore} from 'redux';
+        const store = createStore(cartReducer);
+        export default store;
 
-        const inititalState = {
-            carts:[],
-        }
-
-        const cartReducers = (state=inititalState, action) => {
-            switch(action.type){
-                case ADD_TO_CART:
-                    const newId = action.id;
-                    const newCart = [...state.carts, newId];
-                    return {carts:newCart};
-                case REMOVE_FROM_CART:
-                    const id = action.id;
-                    const remainingCart = state.carts.filter(item => item !== id);
-                    return {carts:remainingCart};
-                default :
-                    return state;
-            }
-        }
-
-        export default cartReducers;
-
-2. we can combine multiple reducers by using combineReducers method of redux.
-the arg of this method is an object where has single reducer as object item. 
-And the method return a combined reducer. We will export default this reducer
+2. After that we need to connect redux with react. For this we need to import 
+Provider component from 'react-redux' on main parent component. In root.render method 
+we will render/use Provider component with store props. In store props we will
+put out store that we create.
     ===>
-        import {combineReducers} from 'reducer';
-
-        const rootReducer = combineReducers({
-            reducer1,
-            reducer2,
-            reducer3,
-        })
-
-        export default rootReducer;
+        import {Provider} from 'react-redux';
+        import {store} from './redux/store/store.js';
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <Provider store={store}>
+            <App />
+            </Provider>
+        );
