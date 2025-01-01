@@ -1,6 +1,7 @@
-1. In react project if we want to use Redux then we need to setup redux first:
-    ===> 
-        1. setup and think action
-        2. setup and think reducer
-        3. After that we need to thing about store
-2. After that we need to use react-redux for using redux in react 
+1. When we start a project First of all we will setup the state of redux store.
+
+2. We will create all redux file under redux folder. the folder structur will:
+    ===>
+        src->redux->actions
+                  ->reducers
+                  ->store
