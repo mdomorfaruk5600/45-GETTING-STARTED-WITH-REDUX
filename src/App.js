@@ -6,8 +6,8 @@ import Cart from './components/Cart/Cart';
 function App() {
   return (
     <div>
-      <Shop />
       <Cart />
+      <Shop />
     </div>
   );
 }
