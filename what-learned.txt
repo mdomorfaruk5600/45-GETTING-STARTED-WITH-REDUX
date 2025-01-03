@@ -1,1 +1,1 @@
-1. 45-8 use redux state and redux actions from a child component
+1. 45-10 bug fix with redux reducer and action dispatch
